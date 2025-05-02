@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:text="Добро пожаловать в Санкт-Петербург!"
+        android:textSize="24sp"
+
+        android:gravity="center"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Смотреть рекомендации"
+        android:layout_height="wrap_content" />
+</LinearLayout>

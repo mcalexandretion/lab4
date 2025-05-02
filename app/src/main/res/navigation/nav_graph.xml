@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <!-- Main Fragment (начальный экран) -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.city.ui.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_categoryListFragment"
+            app:destination="@id/categoryListFragment" />
+    </fragment>
+
+    <!-- Category List Fragment -->
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.example.city.ui.CategoryListFragment"
+        android:label="Category List"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_categoryListFragment_to_recommendationListFragment"
+            app:destination="@id/recommendationListFragment" />
+    </fragment>
+
+    <!-- Recommendation List Fragment -->
+    <fragment
+        android:id="@+id/recommendationListFragment"
+        android:name="com.example.city.ui.RecommendationListFragment"
+        android:label="Recommendation List"
+        tools:layout="@layout/fragment_recommendation_list" />
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.example.city.ui.CategoryListFragment"
+        android:label="Category List"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_categoryListFragment_to_recommendationListFragment"
+            app:destination="@id/recommendationListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recommendationListFragment"
+        android:name="com.example.city.ui.RecommendationListFragment"
+        android:label="Recommendation List"
+        tools:layout="@layout/fragment_recommendation_list">
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
