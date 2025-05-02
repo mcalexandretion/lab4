@@ -1,6 +1,5 @@
 package com.example.city.viewmodel
 
-
 import androidx.lifecycle.ViewModel
 import com.example.city.R
 import com.example.city.data.Recommendation

@@ -1,35 +1,42 @@
 package com.example.city.ui
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.city.R
 import com.example.city.data.Recommendation
+import com.example.city.databinding.ItemRecommendationBinding
 
-class RecommendationAdapter(private val list: List<Recommendation>) :
-    RecyclerView.Adapter<RecommendationAdapter.RecViewHolder>() {
+class RecommendationAdapter(
+    private val recommendations: List<Recommendation>,
+    private val onItemClick: (Recommendation) -> Unit
+) : RecyclerView.Adapter<RecommendationAdapter.RecommendationViewHolder>() {
 
-    inner class RecViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val name: TextView = view.findViewById(R.id.rec_name)
-        val description: TextView = view.findViewById(R.id.rec_description)
-        val image: ImageView = view.findViewById(R.id.rec_image)
+    inner class RecommendationViewHolder(
+        private val binding: ItemRecommendationBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(recommendation: Recommendation) {
+            binding.recName.text = recommendation.name
+            binding.recDescription.text = recommendation.description
+            binding.recImage.setImageResource(recommendation.imageResId)
+
+            binding.root.setOnClickListener {
+                onItemClick(recommendation)
+            }
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_recommendation, parent, false)
-        return RecViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecommendationViewHolder {
+        val binding = ItemRecommendationBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return RecommendationViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: RecViewHolder, position: Int) {
-        val item = list[position]
-        holder.name.text = item.name
-        holder.description.text = item.description
-        holder.image.setImageResource(item.imageResId)
+    override fun onBindViewHolder(holder: RecommendationViewHolder, position: Int) {
+        holder.bind(recommendations[position])
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = recommendations.size
 }
