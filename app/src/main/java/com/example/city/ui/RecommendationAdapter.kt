@@ -16,7 +16,7 @@ class RecommendationAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(recommendation: Recommendation) {
             binding.recName.text = recommendation.name
-            binding.recDescription.text = recommendation.description
+            //binding.recDescription.text = recommendation.description
             binding.recImage.setImageResource(recommendation.imageResId)
 
             binding.root.setOnClickListener {

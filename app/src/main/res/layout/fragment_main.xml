@@ -1,20 +1,68 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:text="Добро пожаловать в Санкт-Петербург!"
-        android:textSize="24sp"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gorod_votkinsk" />
 
-        android:gravity="center"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 
-    <Button
-        android:id="@+id/button_start"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Смотреть рекомендации"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Добро пожаловать в"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            style="@style/nunito_bold"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+          />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Воткинск"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            style="@style/nunito_bold"
+            android:gravity="center"
+            android:letterSpacing="0.02"
+            android:layout_marginTop="8dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_start"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:backgroundTint="@color/white_20pct"
+            android:text="Смотреть рекомендации"
+            android:textColor="@color/white"
+
+            android:textSize="16sp"
+            app:cornerRadius="24dp"
+
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp" />
+    </LinearLayout>
+
+
+</FrameLayout>

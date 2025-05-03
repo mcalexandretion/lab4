@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.City" parent="Base.Theme.City" />
+
+    <style name="nunito_light">
+        <item name="android:fontFamily">@font/lor_l</item>
+    </style>
+    <style name="nunito_bold">
+        <item name="android:fontFamily">@font/lor_b</item>
+    </style>
 </resources>

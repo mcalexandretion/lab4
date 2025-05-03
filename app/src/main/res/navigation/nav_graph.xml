@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/mainFragment"
+    app:launchSingleTop="true">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.city.ui.MainFragment"
         android:label="Главная"
+        android:textColor="@color/white"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_categoryListFragment"
@@ -20,6 +22,7 @@
         android:name="com.example.city.ui.CategoryListFragment"
         android:label="Категории"
         tools:layout="@layout/fragment_category_list">
+        android:textColor="@color/white"
         <action
             android:id="@+id/action_categoryListFragment_to_recommendationListFragment"
             app:destination="@id/recommendationListFragment" />
@@ -29,6 +32,7 @@
         android:id="@+id/recommendationListFragment"
         android:name="com.example.city.ui.RecommendationListFragment"
         android:label="Рекомендации"
+        android:textColor="@color/white"
         tools:layout="@layout/fragment_recommendation_list">
         <argument
             android:name="categoryName"
@@ -42,6 +46,7 @@
         android:id="@+id/recommendationDetailFragment"
         android:name="com.example.city.ui.RecommendationDetailFragment"
         android:label="Детали"
+        android:textColor="@color/white"
         tools:layout="@layout/fragment_recommendation_detail">
         <argument
             android:name="recommendation"
