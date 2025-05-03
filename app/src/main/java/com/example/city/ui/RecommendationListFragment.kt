@@ -33,7 +33,6 @@ class RecommendationListFragment : Fragment() {
         val categoryName = args.categoryName
         binding.categoryName.text = categoryName
 
-        // Используем метод viewModel для получения рекомендаций
         val recommendations = viewModel.getRecommendations(categoryName)
 
         binding.recyclerViewRecommendations.apply {

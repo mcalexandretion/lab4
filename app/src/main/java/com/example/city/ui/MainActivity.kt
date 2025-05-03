@@ -16,22 +16,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Устанавливаем Toolbar как ActionBar
         setSupportActionBar(binding.toolbar)
 
-        // Получаем NavController для навигации
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
-        // Создаем конфигурацию AppBar, указывая top-level destinations
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.categoryListFragment // Укажите здесь ID вашего стартового фрагмента
+                R.id.categoryListFragment
             )
         )
 
-        // Настраиваем ActionBar с NavController и AppBarConfiguration
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 

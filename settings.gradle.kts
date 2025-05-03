@@ -1,6 +1,6 @@
 pluginManagement {
     repositories {
-        google()            // ✅ нужен для Safe Args
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
